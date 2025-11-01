@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGM一覧 | ぷんぽんのフリーBGMサイト</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", "Noto Sans JP", sans-serif;
+      background: url('background.png') center/cover no-repeat fixed, linear-gradient(#ffe6f9, #e0f0ff);
+      color: #444;
+    }
+
+    /* 🌸 ナビゲーション */
+    nav {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 12px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff66b3;
+    }
+
+    /* 💿 カードレイアウト */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: #ff66b3;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="bgm.html">BGM一覧</a>
+    <a href="faq.html">よくある質問</a>
+    <a href="terms.html">利用規約</a>
+  </nav>
+
+  <div class="container">
+  <div class="card">
+    <h3>彼女が見た、世界の終わり</h3>
+    <audio controls>
+  <source src="https://raw.githubusercontent.com/punpon540/punpon.github.io/main/kanojogamita.mp3" type="audio/mpeg">
+  お使いのブラウザはaudioタグに対応していません。
+</audio>
+
+    <p>強大な敵を前に絶望してる感じ</p>
+  </div>
+</div>
+</body>
+</html>
