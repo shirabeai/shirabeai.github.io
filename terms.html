@@ -3,58 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>利用規約 | しらべあいの音楽置き場。</title>
-  <link rel="stylesheet" href="style.css">
+  <title>作品 | しらべあい</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", "Noto Sans JP", sans-serif;
+      background: url('background.png') center/cover no-repeat fixed, linear-gradient(#ffe6f9, #e0f0ff);
+      color: #444;
+      line-height: 1.8;
+    }
+
+    /* 🌸 ナビゲーション */
+    nav {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 12px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    nav a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff66b3;
+    }
+
+    /* 💿 カードレイアウト */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 50px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: #ff66b3;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+
+    /* ✨ タグデザイン */
+    .tags {
+      margin-bottom: 10px;
+    }
+    .tags span {
+      display: inline-block;
+      background: rgba(255, 102, 179, 0.1);
+      color: #ff66b3;
+      border: 1px solid #ffb6d9;
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 0.8em;
+      margin: 2px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .tags span:hover {
+      background: #ff66b3;
+      color: #fff;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+      margin: 8px 0 12px;
+    }
+
+    p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    /* すべて表示ボタン */
+    #resetBtn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ffb6d9;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #resetBtn:hover {
+      background: #ff66b3;
+    }
+  </style>
 </head>
 <body>
-  <nav>
   <nav>
     <a href="index.html">ホーム</a>
     <a href="story.html">作品</a>
     <a href="faq.html">よくある質問</a>
     <a href="terms.html">利用規約</a>
   </nav>
-用規約</a>
-</nav>
 
-  <div class="content">
-    <h1>利用規約</h1>
+  <div class="container">
 
-    <p>
-      しらべあいのBGMは、<strong>個人の方がルールを守って自由に使えるフリー音源</strong>です。<br>
-      動画・配信・ゲームなど、<strong>創作活動の一環として</strong>ぜひ使ってください！<br>
-      クレジット表記・使用報告は<strong>任意</strong>です。<br>
-      書いてもらえる場合は、
-      <code>BGM：しらべあい</code> でOKです。
-    </p>
+    <div class="card">
+      <h3>彼女が見た、世界の終わり</h3>
+      <div class="tags">
+        <span>#壮大</span>
+        <span>#切ない</span>
+        <span>#終焉の美</span>
+      </div>
+      <audio controls>
+        <source src="kanojogamita.mp3" type="audio/mpeg">
+      </audio>
+      <p>廃墟の街を見つめていた少女は、ただ「きれいだね」と呟いた。<br>
+      あの日の記憶が音になって、静かに溶けていく。</p>
+    </div>
 
-    <h2>🎵 OKな使い方</h2>
-    <ul>
-      <li>個人の動画・配信・ゲーム制作・同人作品などへの使用</li>
-      <li>音量調整・カット・ループなどの軽い編集</li>
-    </ul>
+    <div class="card">
+      <h3>刃は折れても、心は折るな。</h3>
+      <div class="tags">
+        <span>#和風</span>
+        <span>#勇敢</span>
+        <span>#静かな熱さ</span>
+      </div>
+      <audio controls>
+        <source src="yaibawaoretemo.mp3" type="audio/mpeg">
+      </audio>
+      <p>和風の曲。侍が現代に投げかける言葉的なイメージ。<br>
+      「折れるのは刃、折れぬは心。」</p>
+    </div>
 
-    <h2>🚫 NGな使い方</h2>
-    <ul>
-      <li>企業・法人などの<strong>商用利用（宣伝、広告、商品、アプリなど）</strong></li>
-      <li>音源を<strong>そのまま販売・再配布</strong>する行為</li>
-      <li>音源を<strong>そのまま動画サイト等へアップロード</strong>する行為</li>
-      <li>自作発言（自分の曲として公開するなど）</li>
-      <li>他人を傷つける・公序良俗に反する内容での使用</li>
-          </ul>
+    <div class="card">
+      <h3>崩壊のレクイエム</h3>
+      <div class="tags">
+        <span>#荘厳</span>
+        <span>#悲壮</span>
+        <span>#狂気</span>
+      </div>
+      <audio controls>
+        <source src="houkainorekuiemu.mp3" type="audio/mpeg">
+      </audio>
+      <p>悲しみと狂気が交わる場所。<br>
+      滅びの中にある静かな祈り。</p>
+    </div>
 
-    <h2>⚠️ その他</h2>
-    <ul>
-      <li>このBGMを使って発生したトラブル等については責任を負いかねます。</li>
-      <li>規約は予告なく変更される場合があります。</li>
-    </ul>
+    <div class="card">
+      <h3>冒険大行進！</h3>
+      <div class="tags">
+        <span>#明るい</span>
+        <span>#勇気</span>
+        <span>#子供心</span>
+      </div>
+      <audio controls>
+        <source src="boukendaikousin.mp3" type="audio/mpeg">
+      </audio>
+      <p>子供たちの笑い声が風に乗って遠くまで響く。<br>
+      さあ、今日もどんな冒険が待っているだろう？</p>
+    </div>
 
-    <p style="margin-top: 2em; text-align: center;">
-      💡 <strong>個人利用OK・商用NG・クレジット任意・再配布NG</strong><br>
-      （BGM：しらべあい）
-    </p>
   </div>
 
-  <footer>© 2025 しらべあい</footer>
+  <button id="resetBtn" style="display:none;">すべて表示</button>
+
+  <footer>© 2025 しらべあい Music</footer>
+
+  <script>
+    const tags = document.querySelectorAll('.tags span');
+    const cards = document.querySelectorAll('.card');
+    const resetBtn = document.getElementById('resetBtn');
+
+    tags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const selected = tag.textContent.trim();
+        cards.forEach(card => {
+          if (card.innerHTML.includes(selected)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        resetBtn.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    resetBtn.addEventListener('click', () => {
+      cards.forEach(c => (c.style.display = 'block'));
+      resetBtn.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
