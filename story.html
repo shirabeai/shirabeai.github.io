@@ -35,13 +35,32 @@
       color: #ff66b3;
     }
 
+    /* 🔍 検索バー */
+    .search-box {
+      text-align: center;
+      margin: 30px auto 0;
+    }
+    .search-box input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px 15px;
+      border: 2px solid #ffb6d9;
+      border-radius: 25px;
+      outline: none;
+      font-size: 1em;
+      color: #444;
+    }
+    .search-box input:focus {
+      border-color: #ff66b3;
+    }
+
     /* 💿 カードレイアウト */
     .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 25px;
-      padding: 50px 20px;
+      padding: 30px 20px 60px;
     }
 
     .card {
@@ -129,6 +148,10 @@
     <a href="terms.html">利用規約</a>
   </nav>
 
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="キーワードで検索（例：和風、壮大、日常など）">
+  </div>
+
   <div class="container">
 
     <div class="card">
@@ -197,25 +220,35 @@
     const tags = document.querySelectorAll('.tags span');
     const cards = document.querySelectorAll('.card');
     const resetBtn = document.getElementById('resetBtn');
+    const searchInput = document.getElementById('searchInput');
 
+    // タグクリックでフィルター
     tags.forEach(tag => {
       tag.addEventListener('click', () => {
         const selected = tag.textContent.trim();
         cards.forEach(card => {
-          if (card.innerHTML.includes(selected)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
+          card.style.display = card.innerHTML.includes(selected) ? 'block' : 'none';
         });
         resetBtn.style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
 
+    // 🔍 検索バー機能
+    searchInput.addEventListener('input', () => {
+      const keyword = searchInput.value.trim().toLowerCase();
+      cards.forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(keyword)
+          ? 'block'
+          : 'none';
+      });
+    });
+
+    // 「すべて表示」ボタン
     resetBtn.addEventListener('click', () => {
       cards.forEach(c => (c.style.display = 'block'));
       resetBtn.style.display = 'none';
+      searchInput.value = '';
     });
   </script>
 </body>
