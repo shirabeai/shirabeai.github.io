@@ -3,68 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>物語一覧 | しらべあい</title>
+  <title>作品 | しらべあい</title>
   <style>
     body {
       margin: 0;
-      font-family: "Noto Sans JP", sans-serif;
-      background: url('background.png') center/cover no-repeat fixed;
+      font-family: "Poppins", "Noto Sans JP", sans-serif;
+      background: url('background.png') center/cover no-repeat fixed, linear-gradient(#ffe6f9, #e0f0ff);
       color: #444;
     }
+
+    /* 🌸 ナビゲーション */
     nav {
-      background: rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(8px);
+      padding: 12px 0;
       text-align: center;
-      padding: 10px 0;
       position: sticky;
       top: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 100;
     }
     nav a {
-      margin: 0 15px;
       color: #555;
       text-decoration: none;
+      margin: 0 20px;
       font-weight: bold;
+      transition: color 0.3s;
     }
-    .content {
-      max-width: 700px;
-      margin: 60px auto;
-      background: rgba(255,255,255,0.8);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .story-link {
-      display: block;
-      background: rgba(255,255,255,0.7);
-      border-radius: 10px;
-      margin: 15px 0;
-      padding: 15px;
-      text-decoration: none;
+    nav a:hover {
       color: #ff66b3;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: 0.3s;
     }
-    .story-link:hover {
-      background: #ffecf6;
-      transform: translateY(-3px);
+
+    /* 💿 カードレイアウト */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 50px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: #ff66b3;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html">ホーム</a>
-    <a href="bgm.html">BGM一覧</a>
-    <a href="story.html">物語</a>
+    <a href="story.html">作品</a>
+    <a href="faq.html">よくある質問</a>
     <a href="terms.html">利用規約</a>
   </nav>
 
-  <div class="content">
-    <h1>しらべあいの物語</h1>
-    <a class="story-link" href="story1.html">第1話：光の降る丘</a>
-    <a class="story-link" href="story2.html">第2話：電脳の神さま</a>
-    <a class="story-link" href="story3.html">第3話：わたしのエラーコード</a>
+  <div class="container">
+
+    <div class="card">
+      <h3>彼女が見た、世界の終わり</h3>
+      <audio controls>
+        <source src="kanojogamita.mp3" type="audio/mpeg">
+        お使いのブラウザは audio タグに対応していません。
+      </audio>
+      <p>廃墟の街を見つめていた少女は、ただ「きれいだね」と呟いた。<br>
+      あの日の記憶が音になって、静かに溶けていく。</p>
+    </div>
+  
+    <div class="card">
+      <h3>刃は折れても、心は折るな。</h3>
+      <audio controls>
+        <source src="yaibawaoretemo.mp3" type="audio/mpeg">
+        お使いのブラウザは audio タグに対応していません。
+      </audio>
+      <p>和風の曲。侍が現代に投げかける言葉的なイメージ。<br>
+      「折れるのは刃、折れぬは心。」</p>
+    </div>     
+  
+    <div class="card">
+      <h3>崩壊のレクイエム</h3>
+      <audio controls>
+        <source src="houkainorekuiemu.mp3" type="audio/mpeg">
+        お使いのブラウザは audio タグに対応していません。
+      </audio>
+      <p>悲しみと狂気が交わる場所。<br>
+      滅びの中にある静かな祈り。</p>
+    </div>  
+   
+    <div class="card">
+      <h3>冒険大行進！</h3>
+      <audio controls>
+        <source src="boukendaikousin.mp3" type="audio/mpeg">
+        お使いのブラウザは audio タグに対応していません。
+      </audio>
+      <p>子供たちの笑い声が風に乗って遠くまで響く。<br>
+      さあ、今日もどんな冒険が待っているだろう？</p>
+    </div>
+
   </div>
+
+  <footer>© 2025 しらべあい Music</footer>
 </body>
 </html>
