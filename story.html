@@ -10,6 +10,7 @@
       font-family: "Poppins", "Noto Sans JP", sans-serif;
       background: url('background.png') center/cover no-repeat fixed, linear-gradient(#ffe6f9, #e0f0ff);
       color: #444;
+      line-height: 1.8;
     }
 
     /* 🌸 ナビゲーション */
@@ -61,13 +62,34 @@
     .card h3 {
       color: #ff66b3;
       font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+
+    /* ✨ タグデザイン */
+    .tags {
       margin-bottom: 10px;
+    }
+    .tags span {
+      display: inline-block;
+      background: rgba(255, 102, 179, 0.1);
+      color: #ff66b3;
+      border: 1px solid #ffb6d9;
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 0.8em;
+      margin: 2px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .tags span:hover {
+      background: #ff66b3;
+      color: #fff;
     }
 
     audio {
       width: 100%;
       outline: none;
-      margin-bottom: 10px;
+      margin: 8px 0 12px;
     }
 
     p {
@@ -80,6 +102,22 @@
       padding: 20px;
       font-size: 0.9em;
       color: #777;
+    }
+
+    /* すべて表示ボタン */
+    #resetBtn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ffb6d9;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #resetBtn:hover {
+      background: #ff66b3;
     }
   </style>
 </head>
@@ -95,46 +133,90 @@
 
     <div class="card">
       <h3>彼女が見た、世界の終わり</h3>
+      <div class="tags">
+        <span>#壮大</span>
+        <span>#ラスボス</span>
+        <span>#恐怖</span>
+      </div>
       <audio controls>
         <source src="kanojogamita.mp3" type="audio/mpeg">
-        お使いのブラウザは audio タグに対応していません。
       </audio>
-      <p>強大な敵を前にただ壊れてく街を眺めるそんな曲。<br>
-      負けイベ、ラスボスなんかに合うかも！</p>
+      <p>「絶対に勝てない」恐怖と絶望で壊れてく世界を見つめてる。<br>
+      ラスボス系とか負けイベとか似合うかも！</p>
     </div>
-  
+
     <div class="card">
       <h3>刃は折れても、心は折るな。</h3>
+      <div class="tags">
+        <span>#和風</span>
+        <span>#勇敢</span>
+        <span>#壮大</span>
+      </div>
       <audio controls>
         <source src="yaibawaoretemo.mp3" type="audio/mpeg">
-        お使いのブラウザは audio タグに対応していません。
       </audio>
       <p>和風の曲。侍が現代に投げかける言葉的なイメージ。<br>
-      「折れるのは刃、折れぬは心。」</p>
-    </div>     
-  
+      言わずもがな和風の作品に合うかもな曲！</p>
+    </div>
+
     <div class="card">
       <h3>崩壊のレクイエム</h3>
+      <div class="tags">
+        <span>#悲しい</span>
+        <span>#悲壮</span>
+        <span>#狂気</span>
+      </div>
       <audio controls>
         <source src="houkainorekuiemu.mp3" type="audio/mpeg">
-        お使いのブラウザは audio タグに対応していません。
       </audio>
-      <p>廃墟と化した教会で静かに狂気に触れるような曲。<br>
-      使いどころが難しいかも知れない曲！</p>
-    </div>  
-   
+      <p>悲しみと狂気が交わる場所。<br>
+      オーケーストラトとダブステップの融合。使い所はかなり難しいと思う！</p>
+    </div>
+
     <div class="card">
       <h3>冒険大行進！</h3>
+      <div class="tags">
+        <span>#明るい</span>
+        <span>#元気</span>
+        <span>#日常</span>
+      </div>
       <audio controls>
         <source src="boukendaikousin.mp3" type="audio/mpeg">
-        お使いのブラウザは audio タグに対応していません。
       </audio>
-      <p>子供たちのワクワクドキドキ大冒険！<br>
-      日常系にしては少しやかましいかもしれない曲！</p>
+      <p>子供たちの笑い声が風に乗って遠くまで響く。<br>
+      日常系だけど少しやかましいかも？</p>
     </div>
 
   </div>
 
+  <button id="resetBtn" style="display:none;">すべて表示</button>
+
   <footer>© 2025 しらべあい Music</footer>
+
+  <script>
+    const tags = document.querySelectorAll('.tags span');
+    const cards = document.querySelectorAll('.card');
+    const resetBtn = document.getElementById('resetBtn');
+
+    tags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const selected = tag.textContent.trim();
+        cards.forEach(card => {
+          if (card.innerHTML.includes(selected)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        resetBtn.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    resetBtn.addEventListener('click', () => {
+      cards.forEach(c => (c.style.display = 'block'));
+      resetBtn.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
